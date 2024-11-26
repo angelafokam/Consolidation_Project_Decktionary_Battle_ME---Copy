@@ -1,7 +1,12 @@
 import random
 import os 
 import time 
-import functions 
+from functions import player1_card_display_function
+from functions import player2_card_display_function
+from functions import player1_turn_function
+from functions import player2_turn_function
+from functions import card_values_function
+from functions import scoring_system_function
 # making the deck of cards
 
 #give value to face cards and ace 
@@ -51,8 +56,8 @@ answer_yes = "yes"
 answer_no = "no"
 
 print(f"Ok, {player1} you will go first, make sure {player2} cannot see the screen")
-function.player1_card_display_function(player1,player1_deck,answer_yes,answer_no,player2) #for player1
-function.player2_card_display_function(player2, player2_deck,answer_yes,answer_no,player1) #for player2
+player1_card_display_function(player1,player1_deck,answer_yes,answer_no,player2) #for player1
+player2_card_display_function(player2, player2_deck,answer_yes,answer_no,player1) #for player2
 
 #seperating the function seperatly 
 #player 1 plays cards
@@ -62,8 +67,8 @@ scores = {"player1":0, "player2":0}
 #repeats the gaming process until the certain scoring criterias are met 
 while True:
     #allows players to put cards in the deck and pick card from deck if wanted 
-    function.player1_turn_function(the_muck, player1, player2, player1_deck, deck)
-    function.player2_turn_function(the_muck, player1, player2, player2_deck, deck)
+    player1_turn_function(the_muck, player1, player2, player1_deck, deck)
+    player2_turn_function(the_muck, player1, player2, player2_deck, deck)
     
     #removes the card players played from the muck to determine their seperate values 
     player1_card = []
@@ -72,9 +77,9 @@ while True:
     player2_card.append(the_muck.pop(0))
 
     #determines the value of the cards and displays the score
-    function.card_values_function(player1, player2, player1_card,player2_card,face_card_values,scores)
+    card_values_function(player1, player2, player1_card,player2_card,face_card_values,scores)
     #ends the game and saves the results depending on scoring which determines how the game is won 
-    end_loop = function.scoring_system_function(player1, player2, player1_deck, player2_deck, scores)
+    end_loop = scoring_system_function(player1, player2, player1_deck, player2_deck, scores)
 
     if end_loop:
         break
