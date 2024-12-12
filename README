@@ -40,6 +40,6 @@ For this requirment I used time inbetween card displays. This was important beca
 ## Drawbacks
 - It does not alternate who goes first; player 1 always goes first.
 - The "Do you want to pull a card from the deck?" question only allows players to respond once and only gives one card.
- - Players can technically put down whatever card they want; the program does not look at the cards to see if the players are placing cards from the same suits.
+- Players can technically put down whatever card they want; the program does not look at the cards to see if the players are placing cards from the same suits.
 - When players enter the cards, they have to enter it word for word.
- - Instead of starting a new round at a tie, it just says both players are tied.
+- Instead of starting a new round at a tie, it just says both players are tied.
