@@ -230,6 +230,9 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             if scores["player1"] > scores["player2"]:
                 results = print(f"{player1} wins, with a score of {scores["player1"]} to {scores["player2"]}")
                 results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                #turning the code into panda dataframe 
+                results_df = pd.DataFrame(results_printed)
+                #saving the results into a csv using the panda dataframe styling 
                 results_df.to_csv("Decktionary_game_results.csv", index = False)
                 print("Results have been sasved to 'Decktionary_game_results.csv'!")
                 print("It was fun playing with you!")
@@ -238,6 +241,9 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             elif scores["player1"] < scores["player2"]:
                 results = print(f"{player2} wins, with a score of {scores["player1"]} to {scores["player2"]}")
                 results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                #turning the code into panda dataframe 
+                results_df = pd.DataFrame(results_printed)
+                #saving the results into a csv using the panda dataframe styling 
                 results_df.to_csv("Decktionary_game_results.csv", index = False)
                 print("Results have been sasved to 'Decktionary_game_results.csv'!")
                 print("It was fun playing with you!")
@@ -246,6 +252,9 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             elif scores["player1"] == scores["player2"] :
                 results = print(f"Its a tie!  {scores["player1"]} to {scores["player2"]}")
                 results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                #turning the code into panda dataframe 
+                results_df = pd.DataFrame(results_printed)
+                #saving the results into a csv using the panda dataframe styling 
                 results_df.to_csv("Decktionary_game_results.csv", index = False)
                 print("Results have been sasved to 'Decktionary_game_results.csv'!")
                 print("It was fun playing with you!")
