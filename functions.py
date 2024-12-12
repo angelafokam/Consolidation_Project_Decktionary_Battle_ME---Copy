@@ -2,7 +2,8 @@
 #this function allows players to view their cards  
 import os
 import time 
-
+import pandas as pd 
+import csv 
 
 #this function displays player1s cards 
 def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,player2):
@@ -170,24 +171,28 @@ def card_values_function(player1, player2, player1_card,player2_card,face_card_v
 #this function determines how the game is won 
 def scoring_system_function(player1, player2, player1_deck, player2_deck, scores):
     #if one of them scores a 9 and 1
-        if scores["player1"] == 9 and scores["player2"] <=1:
+        if scores["player1"] == 1 and scores["player2"] <=1:
             print("Gameover, Early game end")
             results = print(f"{player1} wins, with a score of 9 to {scores["player2"]}")
-            results = f"{player1} wins, with a score of 9 to {scores["player2"]}"
-            #save the results 
-            with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                text_file.write(results)
-                print("saved results in Decktionary_Battle_Scores.txt file")
+            results_printed = {"Player": [player1,player2], "Score":[9, scores["player2"]]}
+            #turning the code into panda dataframe 
+            results_df = pd.DataFrame(results_printed)
+            #saving the results into a csv using the panda dataframe styling 
+            results_df.to_csv("Decktionary_game_results.csv", index = False)
+            print("Results have been sasved to 'Decktionary_game_results.csv'!")
+            print("It was fun playing with you!")
             return True
         
-        elif scores["player2"]  == 9 and scores["player1"]  <=1:
+        elif scores["player2"]  == 1 and scores["player1"]  <=1:
             print("Gameover, Early game end")
             results = print(f"{player2} wins, with a score of {scores["player1"]} to 9")
-            results = f"{player2} wins, with a score of {scores["player1"]} to 9"
-            #save the results 
-            with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                text_file.write(results)
-                print("saved results in Decktionary_Battle_Scores.txt file")
+            results_printed = {"Player": [player1,player2], "Score":[scores["player2", 9]]}
+            #turning the code into panda dataframe 
+            results_df = pd.DataFrame(results_printed)
+            #saving the results into a csv using the panda dataframe styling 
+            results_df.to_csv("Decktionary_game_results.csv", index = False)
+            print("Results have been sasved to 'Decktionary_game_results.csv'!")
+            print("It was fun playing with you!")
             return True
         
         #if one of them scores a 16 to 0
@@ -196,10 +201,13 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             print(f"{player2} earns +17 points")
             results = print(f"{player2} wins, with a score of 16 to 17")
             results = f"{player2} wins, with a score of 16 to 17"
-            #save the results 
-            with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                text_file.write(results)
-                print("saved results in Decktionary_Battle_Scores.txt file")
+            results_printed = {"Player": [player1,player2], "Score": [16,17]}
+            #turning the code into panda dataframe 
+            results_df = pd.DataFrame(results_printed)
+            #saving the results into a csv using the panda dataframe styling 
+            results_df.to_csv("Decktionary_game_results.csv", index = False)
+            print("Results have been sasved to 'Decktionary_game_results.csv'!")
+            print("It was fun playing with you!")
             return True
         
         elif scores["player2"] == 16 and scores["player1"]  == 0:
@@ -207,10 +215,13 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             print(f"{player1} earns +17 points")
             results = print(f"{player1} wins, with a score of 17 to 16")
             results = f"{player2} wins, with a score of 17 to 16"
-            #save the results 
-            with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                text_file.write(results)
-                print("saved results in Decktionary_Battle_Scores.txt file")
+            results_printed = {"Player": [player1,player2], "Score":[17,16]}
+            #turning the code into panda dataframe 
+            results_df = pd.DataFrame(results_printed)
+            #saving the results into a csv using the panda dataframe styling 
+            results_df.to_csv("Decktionary_game_results.csv", index = False)
+            print("Results have been sasved to 'Decktionary_game_results.csv'!")
+            print("It was fun playing with you!")
             return True
         
     #if one of their decks is empty 
@@ -218,28 +229,28 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             print(f"Gameover, {player1} has no more cards")
             if scores["player1"] > scores["player2"]:
                 results = print(f"{player1} wins, with a score of {scores["player1"]} to {scores["player2"]}")
-                results = f"{player1} wins, with a score of {scores["player1"]} to {scores["player2"]}"
-                #save the results 
-                with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                    text_file.write(results)
-                    print("saved results in Decktionary_Battle_Scores.txt file")
+                results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                results_df.to_csv("Decktionary_game_results.csv", index = False)
+                print("Results have been sasved to 'Decktionary_game_results.csv'!")
+                print("It was fun playing with you!")
                 return True
             
             elif scores["player1"] < scores["player2"]:
                 results = print(f"{player2} wins, with a score of {scores["player1"]} to {scores["player2"]}")
-                results = f"{player2} wins, with a score of {scores["player1"]} to {scores["player2"]}"
-                #save the results 
-                with open ("Decktionary_Battle_Scores.txt","w") as text_file:
-                    text_file.write(results)
-                    print("saved results in Decktionary_Battle_Scores.txt file")
+                results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                results_df.to_csv("Decktionary_game_results.csv", index = False)
+                print("Results have been sasved to 'Decktionary_game_results.csv'!")
+                print("It was fun playing with you!")
                 return True
 
             elif scores["player1"] == scores["player2"] :
                 results = print(f"Its a tie!  {scores["player1"]} to {scores["player2"]}")
-                results = f"Its a tie! {scores["player1"]} to {scores["player2"]}"
+                results_printed = {"Player": [player1,player2], "Score":[scores["player1"], scores["player2"]]}
+                results_df.to_csv("Decktionary_game_results.csv", index = False)
+                print("Results have been sasved to 'Decktionary_game_results.csv'!")
+                print("It was fun playing with you!")
                 return True
         return False    
 
 
-        
-       
+

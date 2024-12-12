@@ -1,4 +1,5 @@
 import random
+import pandas as pd 
 import os 
 import time 
 from functions import player1_card_display_function
@@ -31,6 +32,8 @@ for suit in suits:
 
 ##shuffle the deck of cards 
 random.shuffle(deck)
+#implemented pd to convert the deck to a dataframe
+deck_df = pd.DataFrame(deck)
 ###print("shuffled deck", deck)
 
 ##deal the deck of cards 
