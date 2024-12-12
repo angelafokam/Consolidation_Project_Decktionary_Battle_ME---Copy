@@ -1,37 +1,45 @@
 # Decktionary Battle 
 
 ## introduction 
-### Welcome to Decktionary Battle, where the goal is to win each round; whoever has the most points by the end of the game wins.
+Welcome to Decktionary Battle, where the goal is to win each round; whoever has the most points by the end of the game wins.
 
 
 ## Terms to know
-#### - The muck → the stack of cards players place down
-#### - The deck → is a group of cards; in this game, the total deck has 48 cards (no kings)
+- The muck → the stack of cards players place down
+- The deck → is a group of cards; in this game, the total deck has 48 cards (no kings)
 
 
 ## Rules 
-#### 1. Enter player1 and player2 names.
-#### 2. Read the instructions given on the screen to view the cards given to each player.
-#### 3. Player 1 will go first; they will have the option of picking a card from the deck or from their own pile to place in the muck.
-#### 4. When the screen is cleared, player 2 will go next. They will also have the option of picking a card from the deck or from their own pile to place in the deck.
-#### 5. Continue to read the instructions the program provides throughout the game.
+1. Enter player1 and player2 names.
+2. Read the instructions given on the screen to view the cards given to each player.
+3. Player 1 will go first; they will have the option of picking a card from the deck or from their own pile to place in the muck.
+4. When the screen is cleared, player 2 will go next. They will also have the option of picking a card from the deck or from their own pile to place in the deck.
+5. Continue to read the instructions the program provides throughout the game.
 
 
 ## How to win
-### Like most games, there are different ways to win; in this game, there are four ways to win.
+#### Like most games, there are different ways to win; in this game, there are four ways to win.
 
-#### - Normal scoring: → player with the most points wins.
-#### - "Shot to the Moon": If the score is 16-0, the losing player automatically earns 17 points and wins the game.
-#### - Early game end: → if a player has 9 or more points and the other player has at least 1 point, the winner with more than 9 automatically wins.
-#### - Tie → both players have the same score.
+- Normal scoring: → player with the most points wins.
+- "Shot to the Moon": If the score is 16-0, the losing player automatically earns 17 points and wins the game.
+- Early game end: → if a player has 9 or more points and the other player has at least 1 point, the winner with more than 9 automatically wins.
+- Tie → both players have the same score.
 
 ## How the program works 
-### To start, the program begins by creating a deck of 48 cards and shuffles, then distributes the deck into player1s and player2s decks of cards. After that, the program shows each player their cards and then begins the game. When it comes to the gaming portion, those functions are in a loop; the loop stops only when one of the winning conditions listed above is met.
+To start, the program begins by creating a deck of 48 cards and shuffles, then distributes the deck into player1s and player2s decks of cards. After that, the program shows each player their cards and then begins the game. When it comes to the gaming portion, those functions are in a loop; the loop stops only when one of the winning conditions listed above is met.
 
+
+## How I implemented advanced features 
+
+####  Data analyisis/manipulaton 
+To incorperate this requirement I used pandas as pd to create dataframes for the creation of the deck and to create a dataframe that is prints the results in a csv folder. 
+
+#### Timing analysis/manipultaion
+For this requirment I used time inbetween card displays. This was important because my program is two player so the players need time to give the screen to one another without risking the other player seeing their cards. 
 
 ## Drawbacks
-#### - It does not alternate who goes first; player 1 always goes first.
-#### - The "Do you want to pull a card from the deck?" question only allows players to respond once and only gives one card.
-#### - Players can technically put down whatever card they want; the program does not look at the cards to see if the players are placing cards from the same suits.
-#### - When players enter the cards, they have to enter it word for word.
-#### - Instead of starting a new round at a tie, it just says both players are tied.
+- It does not alternate who goes first; player 1 always goes first.
+- The "Do you want to pull a card from the deck?" question only allows players to respond once and only gives one card.
+ - Players can technically put down whatever card they want; the program does not look at the cards to see if the players are placing cards from the same suits.
+- When players enter the cards, they have to enter it word for word.
+ - Instead of starting a new round at a tie, it just says both players are tied.
