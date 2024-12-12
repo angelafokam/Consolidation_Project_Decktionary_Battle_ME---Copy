@@ -78,8 +78,10 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
     if grab_card == "yes":
         player1_deck.append(deck.pop(0))
         print(f"Updated deck: {player1_deck}")
+        print(f"the muck: {the_muck}")
     elif grab_card == "no":
         print("ok!")
+        print(f"the muck: {the_muck}")
     else:
         print("Invalid response")
 
@@ -110,8 +112,10 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
         if grab_card == "yes" and deck:
             player2_deck.append(deck.pop(0))
             print(f"Updated deck: {player2_deck}")
+            print(f"the muck: {the_muck}")
         elif grab_card != "yes":
             print("ok!")
+            print(f"the muck: {the_muck}")
         elif grab_card != "no":
             print("Invalid response, skipping")
 
