@@ -88,6 +88,7 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
 
     while True:
         player1_delt_card = input("Card you are placing in the muck: ")
+        player1_delt_card.casefold()
     # add the card to muck and delete the card from players deck 
         if player1_delt_card in player1_deck:
             the_muck.append(player1_delt_card)
@@ -121,6 +122,7 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
 
         while True:
             player2_delt_card = input("Card you are placing in the muck: ")
+            player2_delt_card.casefold()
         # add the card to muck and delete the card from players deck 
             if player2_delt_card in player2_deck:
                 the_muck.append(player2_delt_card)
