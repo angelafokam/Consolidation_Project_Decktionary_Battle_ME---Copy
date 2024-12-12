@@ -8,12 +8,12 @@ import csv
 #this function displays player1s cards 
 def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,player2):
    while True:
-        move_on = input("Are you ready to see your cards? (yes/no): ")
+        move_on = input("Are you ready to see your cards? (yes/no): ").lower()
         #if player 1 says yes show them the cards 
         if move_on == answer_yes:
             print(f"{player1} deck: {player1_deck}")
             while True:
-                finished_viewingdeck = input(f"{player1}, Are you finished viewing your deck? (yes/no): ")
+                finished_viewingdeck = input(f"{player1}, Are you finished viewing your deck? (yes/no): ").lower()
                 #continue showing the deck and ask if they are finished in 5 seconds 
                 if finished_viewingdeck == answer_no:
                     print("Ok take your time!")
@@ -38,12 +38,12 @@ def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,pla
 def player2_card_display_function(player2, player2_deck, answer_yes,answer_no,player1):
 
     while True:
-        move_on = input("Are you ready to see your cards? (yes/no): ")
+        move_on = input("Are you ready to see your cards? (yes/no): ").lower()
         #if player 1 says yes show them the cards 
         if move_on == answer_yes:
             print(f"{player2} deck: {player2_deck}")
             while True:
-                finished_viewingdeck = input(f"{player2}, Are you finished viewing your deck? (yes/no): ")
+                finished_viewingdeck = input(f"{player2}, Are you finished viewing your deck? (yes/no): ").lower()
                 #continue showing the deck and ask if they are finished in 5 seconds 
                 if finished_viewingdeck == answer_no:
                     print("Ok take your time!")
@@ -74,7 +74,7 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
     print(f"here is your deck: {player1_deck}")
     print(f"the muck: {the_muck}")
 # asks if they want to grab a card from the deck
-    grab_card = input("Do you want to pull a card from the deck? (yes/no): ")
+    grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
     if grab_card == "yes":
         player1_deck.append(deck.pop(0))
         print(f"Updated deck: {player1_deck}")
@@ -87,8 +87,7 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
 
 
     while True:
-        player1_delt_card = input("Card you are placing in the muck: ")
-        player1_delt_card.casefold()
+        player1_delt_card = input("Card you are placing in the muck: ").lower()
     # add the card to muck and delete the card from players deck 
         if player1_delt_card in player1_deck:
             the_muck.append(player1_delt_card)
@@ -109,7 +108,7 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
         print(f"the muck: {the_muck}")
 
     # asks if they want to grab a card from the deck
-        grab_card = input("Do you want to pull a card from the deck? (yes/no): ")
+        grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
         if grab_card == "yes" and deck:
             player2_deck.append(deck.pop(0))
             print(f"Updated deck: {player2_deck}")
@@ -121,8 +120,7 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
             print("Invalid response, skipping")
 
         while True:
-            player2_delt_card = input("Card you are placing in the muck: ")
-            player2_delt_card.casefold()
+            player2_delt_card = input("Card you are placing in the muck: ").lower()
         # add the card to muck and delete the card from players deck 
             if player2_delt_card in player2_deck:
                 the_muck.append(player2_delt_card)
