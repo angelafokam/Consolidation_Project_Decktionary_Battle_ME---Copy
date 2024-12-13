@@ -87,11 +87,14 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
 
 
     while True:
-        player1_delt_card = input("Card you are placing in the muck: ").lower()
+        player1_delt_card = input("Card you are placing in the muck: ").strip().lower()
+        print(f"{player1} deck: {player1_deck}")
     # add the card to muck and delete the card from players deck 
-        if player1_delt_card in player1_deck:
-            the_muck.append(player1_delt_card)
-            player1_deck.remove(player1_delt_card)
+        if player1_delt_card in map(str.lower,player1_deck):
+            #find the card in the muck
+            altered_player1_card = next(card for card in player1_deck if card.lower() == player1_delt_card)
+            the_muck.append(altered_player1_card)
+            player1_deck.remove(altered_player1_card)
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"{player1}, your card has been placed in the muck")
             print(f"now give the computer to {player2}")
@@ -121,15 +124,20 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
 
         while True:
             player2_delt_card = input("Card you are placing in the muck: ").lower()
+            print(f"{player2} deck: {player2_deck}")
         # add the card to muck and delete the card from players deck 
-            if player2_delt_card in player2_deck:
-                the_muck.append(player2_delt_card)
-                player2_deck.remove(player2_delt_card)
+            if player2_delt_card in map(str.lower,player2_deck):
+                #find the card in the muck
+                altered_player2_card = next(card for card in player2_deck if card.lower() == player2_delt_card)
+                
+                the_muck.append(altered_player2_card)
+                player2_deck.remove(altered_player2_card)
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"your card has been placed in the muck")
                 break
             else:
                 print("the card you entered is not in your deck")
+            
 
 #this function determines the card values in the muck and displays the score 
 def card_values_function(player1, player2, player1_card,player2_card,face_card_values,scores):
