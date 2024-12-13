@@ -1,7 +1,5 @@
 import random
 import pandas as pd 
-import os 
-import time 
 from functions import player1_card_display_function
 from functions import player2_card_display_function
 from functions import player1_turn_function

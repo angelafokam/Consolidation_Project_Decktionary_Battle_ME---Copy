@@ -9,11 +9,13 @@ import pandas as pd
 def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,player2):
    while True:
         move_on = input("Are you ready to see your cards? (yes/no): ").lower()
+        time.sleep(1)
         #if player 1 says yes show them the cards 
         if move_on == answer_yes:
             print(f"{player1} deck: {player1_deck}")
             while True:
                 finished_viewingdeck = input(f"{player1}, Are you finished viewing your deck? (yes/no): ").lower()
+                time.sleep(1)
                 #continue showing the deck and ask if they are finished in 5 seconds 
                 if finished_viewingdeck == answer_no:
                     print("Ok take your time!")
@@ -22,6 +24,7 @@ def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,pla
                 #make the cards disapear from terminal 
                 elif finished_viewingdeck == answer_yes:
                     print("Ok! hiding your cards now")
+                    time.sleep(1.7)
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print(f"Now give the computer to {player2}!")
                     break 
@@ -38,7 +41,7 @@ def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,pla
 def player2_card_display_function(player2, player2_deck, answer_yes,answer_no,player1):
 
     while True:
-        move_on = input("Are you ready to see your cards? (yes/no): ").lower()
+        move_on = input(f"{player2}, Are you ready to see your cards? (yes/no): ").lower()
         #if player 1 says yes show them the cards 
         if move_on == answer_yes:
             print(f"{player2} deck: {player2_deck}")
@@ -55,6 +58,7 @@ def player2_card_display_function(player2, player2_deck, answer_yes,answer_no,pl
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print(f"Now it is time to start the game!")
                     print("For rules and other information check out the Decktionary Battle README")
+                    time.sleep(3)
                     break 
                 else:
                     print("Invalid response, please try again.")
@@ -70,7 +74,7 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
     the_muck.clear()
 #player 1 chooses the card they want to be delt 
     print(f"{player1} it is your turn, make sure {player2} cannot see the screen")
-    time.sleep(4)
+    time.sleep(6)
     print(f"here is your deck: {player1_deck}")
     print(f"the muck: {the_muck}")
 # asks if they want to grab a card from the deck
@@ -98,9 +102,13 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
             altered_player1_card = next(card for card in player1_deck if card.lower() == player1_delt_card)
             the_muck.append(altered_player1_card)
             player1_deck.remove(altered_player1_card)
+            #clears the screen
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"{player1}, your card has been placed in the muck")
             print(f"now give the computer to {player2}")
+            time.sleep(7)
+            #clears the terminal again so the instructions are less confusing
+            os.system('cls' if os.name == 'nt' else 'clear')
             break
         else:
             print("the card you entered is not in your deck")
@@ -109,7 +117,8 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
 def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
     #player 2 plays card 
         print(f"{player2}, it is your turn, make sure {player1} cannot see your screen")
-        time.sleep(3)
+        print("For rules and other information check out the Decktionary Battle README")
+        time.sleep(6)
         print(f"here is your deck: {player2_deck}")
         print(f"the muck: {the_muck}")
 
