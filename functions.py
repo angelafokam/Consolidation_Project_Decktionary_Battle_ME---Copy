@@ -3,7 +3,7 @@
 import os
 import time 
 import pandas as pd 
-import csv 
+
 
 #this function displays player1s cards 
 def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,player2):
@@ -74,16 +74,19 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
     print(f"here is your deck: {player1_deck}")
     print(f"the muck: {the_muck}")
 # asks if they want to grab a card from the deck
-    grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
-    if grab_card == "yes":
-        player1_deck.append(deck.pop(0))
-        print(f"Updated deck: {player1_deck}")
-        print(f"the muck: {the_muck}")
-    elif grab_card == "no":
-        print("ok!")
-        print(f"the muck: {the_muck}")
-    else:
-        print("Invalid response")
+    while True:
+        grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
+        if grab_card == "yes":
+            player1_deck.append(deck.pop(0))
+            print(f"Updated deck: {player1_deck}")
+            print(f"the muck: {the_muck}")
+            break
+        elif grab_card == "no":
+            print("ok!")
+            print(f"the muck: {the_muck}")
+            break
+        else:
+            print("Invalid response")
 
 
     while True:
@@ -111,16 +114,18 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
         print(f"the muck: {the_muck}")
 
     # asks if they want to grab a card from the deck
-        grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
-        if grab_card == "yes" and deck:
-            player2_deck.append(deck.pop(0))
-            print(f"Updated deck: {player2_deck}")
-            print(f"the muck: {the_muck}")
-        elif grab_card != "yes":
-            print("ok!")
-            print(f"the muck: {the_muck}")
-        elif grab_card != "no":
-            print("Invalid response, skipping")
+        while True:
+            grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
+            if grab_card == "yes":
+                print(f"Updated deck: {player2_deck}")
+                print(f"the muck: {the_muck}")
+                break
+            elif grab_card == "no":
+                print("ok!")
+                print(f"The muck: {the_muck}")
+                break
+            else:
+                print("Invalid response")
 
         while True:
             player2_delt_card = input("Card you are placing in the muck: ").lower()
