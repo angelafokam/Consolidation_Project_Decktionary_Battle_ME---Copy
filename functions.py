@@ -198,7 +198,8 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
         elif scores["player2"]  == 1 and scores["player1"]  <=1:
             print("Gameover, Early game end")
             results = print(f"{player2} wins, with a score of {scores["player1"]} to 9")
-            results_printed = {"Player": [player1,player2], "Score":[scores["player2", 9]]}
+            print(results)
+            results_printed = {f"Player": [player1,player2], "Score":[scores["player2"], 9]}
             #turning the code into panda dataframe 
             results_df = pd.DataFrame(results_printed)
             #saving the results into a csv using the panda dataframe styling 
@@ -212,7 +213,6 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             print("Gameover, Shot to the Moon")
             print(f"{player2} earns +17 points")
             results = print(f"{player2} wins, with a score of 16 to 17")
-            results = f"{player2} wins, with a score of 16 to 17"
             results_printed = {"Player": [player1,player2], "Score": [16,17]}
             #turning the code into panda dataframe 
             results_df = pd.DataFrame(results_printed)
@@ -226,7 +226,6 @@ def scoring_system_function(player1, player2, player1_deck, player2_deck, scores
             print("Gameover, Shot to the Moon")
             print(f"{player1} earns +17 points")
             results = print(f"{player1} wins, with a score of 17 to 16")
-            results = f"{player2} wins, with a score of 17 to 16"
             results_printed = {"Player": [player1,player2], "Score":[17,16]}
             #turning the code into panda dataframe 
             results_df = pd.DataFrame(results_printed)

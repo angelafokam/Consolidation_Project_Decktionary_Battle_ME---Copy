@@ -9,7 +9,7 @@ from functions import player2_turn_function
 from functions import card_values_function
 from functions import scoring_system_function
 # making the deck of cards
-
+print("please wait while we distribute the cards...")
 while True:
     #give value to face cards and ace 
     face_card_values = {"Queen":10,"Jack":10,"Ace":11}
@@ -95,5 +95,6 @@ while True:
             exit()
         elif restart_game == "yes":
             print("ok lets play again!")
+            break
         else: 
             print("Invalid response")
