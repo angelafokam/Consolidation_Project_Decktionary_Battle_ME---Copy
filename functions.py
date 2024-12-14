@@ -9,7 +9,6 @@ import pandas as pd
 def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,player2):
    while True:
         move_on = input("Are you ready to see your cards? (yes/no): ").lower()
-        time.sleep(1)
         #if player 1 says yes show them the cards 
         if move_on == answer_yes:
             print(f"{player1} deck: {player1_deck}")
@@ -146,8 +145,11 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
                 
                 the_muck.append(altered_player2_card)
                 player2_deck.remove(altered_player2_card)
-                os.system('cls' if os.name == 'nt' else 'clear')
+                #print(the_muck)
+                #print(player2_deck)
                 print(f"Your card has been placed in the muck")
+                time.sleep(3)
+                os.system('cls' if os.name == 'nt' else 'clear')
                 break
             else:
                 print("The card you entered is not in your deck")
