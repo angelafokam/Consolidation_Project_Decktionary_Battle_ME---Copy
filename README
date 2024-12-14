@@ -1,15 +1,15 @@
-# Decktionary Battle 
+# Dictionary Battle
 
-## introduction 
+## Introduction
 Welcome to Decktionary Battle, where the goal is to win each round; whoever has the most points by the end of the game wins.
 
 
 ## Terms to know
 - The muck → the stack of cards players place down
-- The deck → is a group of cards; in this game, the total deck has 48 cards (no kings)
+- The deck → is a group of cards; in this game, the total deck has 48 cards (no kings).
 
 
-## Rules 
+## Rules
 1. Enter player1 and player2 names.
 2. Read the instructions given on the screen to view the cards given to each player.
 3. Player 1 will go first; they will have the option of picking a card from the deck or from their own pile to place in the muck.
@@ -22,30 +22,30 @@ Welcome to Decktionary Battle, where the goal is to win each round; whoever has 
 
 - Normal scoring: → player with the most points wins.
 - "Shot to the Moon": If the score is 16-0, the losing player automatically earns 17 points and wins the game.
-- Early game end: → if a player has 9 or more points and the other player has at least 1 point, the winner with more than 9 automatically wins.
+- Early game end: → If a player has 9 or more points and the other player has at least 1 point, the winner with more than 9 automatically wins.
 - Tie → both players have the same score.
 
-## How the program works 
-To start, the program begins by creating a deck of 48 cards and shuffles, then distributes the deck into player1s and player2s decks of cards. After that, the program shows each player their cards and then begins the game. When it comes to the gaming portion, those functions are in a loop; the loop stops only when one of the winning conditions listed above is met.
+## How the program works
+To start, the program begins by creating a deck of 48 cards and shuffles, then distributes the deck into player 1's and player 2's decks of cards. After that, the program shows each player their cards and then begins the game. When it comes to the gaming portion, those functions are in a loop; the loop stops only when one of the winning conditions listed above is met.
 
 
-## How I implemented advanced features 
+## How I implemented advanced features
 
-####  Data analyisis/manipulaton 
-To incorperate this requirement I used pandas as pd to create dataframes for the creation of the deck and to create a dataframe that is prints the results in a csv folder. 
+#### Data analysis/manipulation
+To incorporate this requirement, I used pandas as pd to create dataframes for the creation of the deck and to create a dataframe that prints the results in a csv folder.
 
-#### Timing analysis/manipultaion
-For this requirment I used time inbetween card displays. This was important because my program is two player so the players need time to give the screen to one another without risking the other player seeing their cards. 
+#### Timing analysis/manipulation
+For this requirement, I used time in between card displays. This was important because my program is two-player, so the players need time to give the screen to one another without risking the other player seeing their cards.
 
 ## Drawbacks
 - It does not alternate who goes first; player 1 always goes first.
 - Players can technically put down whatever card they want; the program does not look at the cards to see if the players are placing cards from the same suits.
 
 ## Help
-While creating my code I recieved help and advice from numerous people in the class. 
+While creating my code, I received help and advice from numerous people in the class.
 
-Jeff Zhang - he helped me jump start the project by recommending how to create and randomize the deck of cards 
+Jeff Zhang helped me jump-start the project by recommending how to create and randomize the deck of cards.
 
-Boluwatife Bada - gave me recommendations on how to implement the 
+Boluwatife Bada gave me recommendations on how to implement the
 
-I did not recieve the feedback from the other people I sent my code to during the peer review assignment, however, despite that I worked with Stephanie Smith, Aminata Kourouma, and Ian Hashem and hope to hear from them soon. 
+I did not receive the feedback from the other people I sent my code to during the peer review assignment; however, despite that, I worked with Stephanie Smith, Aminata Kourouma, and Ian Hashem and hope to hear from them soon.
