@@ -33,7 +33,7 @@ while True:
     random.shuffle(deck)
     #implemented pd to convert the deck to a dataframe
     deck_df = pd.DataFrame(deck)
-    ###print("shuffled deck", deck)
+    ###print(deck)
 
     ##deal the deck of cards 
     player1_deck = []
@@ -65,6 +65,9 @@ while True:
     #player 1 plays cards
     the_muck= []
     scores = {"player1":0, "player2":0}
+    ###print(the_muck)
+    ###print(scores)
+
 
     #repeats the gaming process until the certain scoring criterias are met 
     while True:
@@ -83,16 +86,17 @@ while True:
         #ends the game and saves the results depending on scoring which determines how the game is won 
         end_loop = scoring_system_function(player1, player2, player1_deck, player2_deck, scores)
 
+    #ends the loop so that the game ends 
         if end_loop:
             break
-
+    # provides the option to replay the game 
     while True:
-        restart_game = input("do you want to replay the game, yes/no: ")
+        restart_game = input("Do you want to replay the game, yes/no: ").lower()
         if restart_game == "no":
-            print("thank you for playing, goodbye!")
+            print("Thank you for playing, goodbye!")
             exit()
         elif restart_game == "yes":
-            print("ok lets play again!")
+            print("Ok, lets play again!")
             break
         else: 
             print("Invalid response")

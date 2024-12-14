@@ -18,7 +18,7 @@ def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,pla
                 time.sleep(1)
                 #continue showing the deck and ask if they are finished in 5 seconds 
                 if finished_viewingdeck == answer_no:
-                    print("Ok take your time!")
+                    print("Ok, take your time!")
                     print(f"{player1} deck: {player1_deck}")
                     time.sleep(5)
                 #make the cards disapear from terminal 
@@ -49,7 +49,7 @@ def player2_card_display_function(player2, player2_deck, answer_yes,answer_no,pl
                 finished_viewingdeck = input(f"{player2}, Are you finished viewing your deck? (yes/no): ").lower()
                 #continue showing the deck and ask if they are finished in 5 seconds 
                 if finished_viewingdeck == answer_no:
-                    print("Ok take your time!")
+                    print("Ok, take your time!")
                     print(f"{player2} deck: {player2_deck}")
                     time.sleep(5)
                 #make the cards disapear from terminal 
@@ -75,19 +75,19 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
 #player 1 chooses the card they want to be delt 
     print(f"{player1} it is your turn, make sure {player2} cannot see the screen")
     time.sleep(6)
-    print(f"here is your deck: {player1_deck}")
-    print(f"the muck: {the_muck}")
+    print(f"Here is your deck: {player1_deck}")
+    print(f"The muck: {the_muck}")
 # asks if they want to grab a card from the deck
     while True:
         grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
         if grab_card == "yes":
             player1_deck.append(deck.pop(0))
             print(f"Updated deck: {player1_deck}")
-            print(f"the muck: {the_muck}")
+            print(f"The muck: {the_muck}")
             break
         elif grab_card == "no":
-            print("ok!")
-            print(f"the muck: {the_muck}")
+            print("Ok!")
+            print(f"The muck: {the_muck}")
             break
         else:
             print("Invalid response")
@@ -105,13 +105,13 @@ def player1_turn_function(the_muck, player1, player2, player1_deck, deck):
             #clears the screen
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"{player1}, your card has been placed in the muck")
-            print(f"now give the computer to {player2}")
+            print(f"Now give the computer to {player2}")
             time.sleep(7)
             #clears the terminal again so the instructions are less confusing
             os.system('cls' if os.name == 'nt' else 'clear')
             break
         else:
-            print("the card you entered is not in your deck")
+            print("The card you entered is not in your deck")
 
 #this function allowes player 2 to pick the card they want to play 
 def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
@@ -119,18 +119,18 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
         print(f"{player2}, it is your turn, make sure {player1} cannot see your screen")
         print("For rules and other information check out the Decktionary Battle README")
         time.sleep(6)
-        print(f"here is your deck: {player2_deck}")
-        print(f"the muck: {the_muck}")
+        print(f"Here is your deck: {player2_deck}")
+        print(f"The muck: {the_muck}")
 
     # asks if they want to grab a card from the deck
         while True:
             grab_card = input("Do you want to pull a card from the deck? (yes/no): ").lower()
             if grab_card == "yes":
                 print(f"Updated deck: {player2_deck}")
-                print(f"the muck: {the_muck}")
+                print(f"TThe muck: {the_muck}")
                 break
             elif grab_card == "no":
-                print("ok!")
+                print("Ok!")
                 print(f"The muck: {the_muck}")
                 break
             else:
@@ -147,10 +147,10 @@ def player2_turn_function(the_muck, player1, player2, player2_deck, deck):
                 the_muck.append(altered_player2_card)
                 player2_deck.remove(altered_player2_card)
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print(f"your card has been placed in the muck")
+                print(f"Your card has been placed in the muck")
                 break
             else:
-                print("the card you entered is not in your deck")
+                print("The card you entered is not in your deck")
             
 
 #this function determines the card values in the muck and displays the score 
