@@ -24,7 +24,9 @@ def player1_card_display_function(player1, player1_deck,answer_yes,answer_no,pla
                 elif finished_viewingdeck == answer_yes:
                     print("Ok! hiding your cards now")
                     time.sleep(1.7)
-                    os.system('cls' if os.name == 'nt' else 'clear')
+                    def clear_screen():
+                        """Clears the terminal screen based on the operating system."""
+                        os.system('cls' if os.name == 'nt' else 'clear')
                     print(f"Now give the computer to {player2}!")
                     break 
                 else:
